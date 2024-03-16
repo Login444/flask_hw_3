@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>Registration</h1>
+    <form action="/" method="POST">
+        {{ form.csrf_token }}
+        <p>
+            {{ form.user_name.label }}<br>
+            {{ form.user_name(size=32) }}
+        </p>
+
+        <p>
+            {{ form.user_lastname.label }}<br>
+            {{ form.user_lastname(size=32) }}
+        </p>
+
+        <p>
+            {{ form.user_email.label }}<br>
+            {{ form.user_email(size=32) }}
+        </p>
+
+        <p>
+            {{ form.user_password.label }}<br>
+            {{ form.user_password(size=32) }}
+        </p>
+        <p>
+            <input type="submit" value="Sign In">
+        </p>
+    </form>
+
+{% endblock %}
